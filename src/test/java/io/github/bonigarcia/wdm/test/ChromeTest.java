@@ -52,15 +52,15 @@ public class ChromeTest {
         driver = new ChromeDriver();
     }
 
-    @After
-    public void teardown() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+//    @After
+//    public void teardown() {
+//        if (driver != null) {
+//            driver.quit();
+//        }
+//    }
 
     @Test
-    public void test() {
+    public void testdois() {
         // Your test code here. For example:
         WebDriverWait wait = new WebDriverWait(driver, 30);
         driver.get("https://en.wikipedia.org/wiki/Main_Page");
@@ -74,5 +74,15 @@ public class ChromeTest {
         wait.until(textToBePresentInElementLocated(By.tagName("body"),
                 "Computer software"));
     }
+
+    @Test
+    public void test() {
+        driver.get("https://en.wikipedia.org/wiki/Main_Page");
+        By viewHistory = By.cssSelector("#ca-history > a:nth-child(1)");
+        driver.findElement(viewHistory).click();
+        By compareButton = By.cssSelector("#mw-history-compare > div:nth-child(4) > input");
+        driver.findElement(compareButton).click();
+    }
+
 
 }
