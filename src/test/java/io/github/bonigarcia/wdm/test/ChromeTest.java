@@ -84,5 +84,22 @@ public class ChromeTest {
         driver.findElement(compareButton).click();
     }
 
+    @Test
+    public void testTres() {
+        driver.get("https://en.wikipedia.org/wiki/Main_Page");
+        By ca = By.id("pt-createaccount");
+        driver.findElement(ca).click();
+        By name = By.name("wpName");
+        driver.findElement(name).sendKeys("Ismaelpucrs");
+        By password = By.name("wpPassword");
+        driver.findElement(password).sendKeys("ismael0123");
+        By retype = By.name("retype");
+        driver.findElement(retype).sendKeys("ismael0123");
+        By email = By.name("email");
+        driver.findElement(email).sendKeys("ismael.vargas@edu.pucrs.br");
+        By create = By.name("wpCreateaccount");
+        driver.findElement(create).click();
+    }
+
 
 }
